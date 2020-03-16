@@ -40,7 +40,7 @@
 
    * [标准输出流](#标准输出流)
 
-   * [序列化](#对象序列化、反序列化流)
+   * [对象序列化、反序列化流](#对象序列化、反序列化流)
 
    * [Properties](#Properties)
 
@@ -561,11 +561,11 @@ public class Demo {
 
 #### 特有方法
 
-<img src="./pic/4.png">
+<img src="F:\\JavaLearn\IO\IO\pic\4.png">
 
 #### 和IO流结合方法
 
-<img src="F:\\javaLearn\\IO\\IO\\pic\\5.png">
+<img src=".\\pic\\5.png">
 
 ```java
 public class Demo2 {
