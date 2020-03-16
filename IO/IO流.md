@@ -1,5 +1,7 @@
 # IO流(java.io)
 
+[[_TOC_]]
+
 ## IO流介绍
 
 IO流处理设备间数据传输问题。
@@ -408,8 +410,6 @@ public String readLine()
  
 ```
 
-
-
 ```java
 public static void main(String[] args) throws IOException {
     BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("F:\\javaLearn\\IO\\fo.txt"));
@@ -429,6 +429,118 @@ public static void main(String[] args) throws IOException {
     bufferedWriter.close();
 
 
+}
+```
+
+## 特殊操作流
+
+### 标准输入流
+
+`public static final InputStream in`：标准输入流
+
+实现键盘录入数据
+
+```java
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//通过new InputStreamReader(System.in)将字节流变成字符流
+//或者通过
+Scanner sca = new Scanner(System.in);
+```
+
+### 标准输出流
+
+`public static final PrintStream out：`标准输出流`
+
+***输出语句 System.out标准是字节输出流***
+
+·PrintStream ps = System.out
+
+·PrintStream类有的方法，System.out都可以用
+
+### 对象序列化、反序列化流
+
+对象序列化：就是将对象保存到磁盘中，或者在网络中传输对象
+
+***对象序列化流：ObjectOutputStrIneam***
+
+```java
+public class Demo {
+    public static void main(String[] args) throws IOException {
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("F:\\javaLearn\\IO\\bo.txt"));
+       //Student实现Serializable接口，Serializable是一个标记接口
+        oos.writeObject(new Student("林徽因",22));
+        oos.close();
+    }
+}
+```
+
+***对象反序列化流：ObjectInputStream***：反序列化先前使用ObjectOutputStrIneam编写的原始数据和对象
+
+```java
+public class Demo2 {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("F:\\javaLearn\\IO\\bo.txt"));
+        Object o = ois.readObject();
+        System.out.println(o);
+        ois.close();
+    }
+```
+
+### Properties(java.util)
+
+· 是一个Map体系的集合类
+
+· 可以保持到流中或从流中加载
+
+```java
+public class Demo {
+    public static void main(String[] args) {
+        //Properties作为Map使用
+        //new Properties时不需要使用泛型说明k v类型
+        Properties properties = new Properties();
+        properties.put("coco","tian");
+        properties.put("xicha","huo");
+        Set<Object> keys = properties.keySet();
+        for (Object key : keys) {
+            Object value = properties.get(key);
+            System.out.println(key+":"+value);
+        }
+    }
+}
+```
+
+#### 特有方法
+
+<img src="F:\\javaLearn\\IO\\IO\\pic\\4.png">
+
+#### 和IO流结合方法
+
+<img src="F:\\javaLearn\\IO\\IO\\pic\\5.png">
+
+```java
+public class Demo2 {
+    public static void main(String[] args) throws IOException{
+        //把集合数据存储到文件中
+        mystore();
+        //把文件数据加载到集合
+        myload();
+
+    }
+    public static void myload() throws IOException{
+        Properties properties = new Properties();
+        properties.load(new FileReader("F:\\javaLearn\\IO\\bo.txt"));
+        Set<String> keys = properties.stringPropertyNames();
+        for (String key : keys) {
+            System.out.println(key+":"+properties.getProperty(key));
+        }
+    }
+    public static void mystore() throws IOException{
+        Properties properties = new Properties();
+        properties.setProperty("lily","y");
+        properties.setProperty("ur","r");
+        properties.store(new FileWriter("F:\\javaLearn\\IO\\bo.txt"),"null");
+
+    }
 }
 ```
 
