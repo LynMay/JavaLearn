@@ -1,6 +1,11 @@
 # IO流(java.io)
 
-[[_TOC_]]
+   * [IO流介绍](##IO流介绍)
+   * [file类](##file类)
+   * [字节流](##字节流)
+   * [字符流](##字符流)
+   * [特殊操作流](##特殊操作流)
+   * [IO流小结](##IO流小结)
 
 ## IO流介绍
 
@@ -549,3 +554,4 @@ public class Demo2 {
 <img src="F:\\javaLearn\\IO\\IO\\pic\\IO.png">
 
 <img src="F:\\javaLearn\\IO\\IO\\pic\\IO2.png">
+
