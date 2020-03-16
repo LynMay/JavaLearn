@@ -1,11 +1,54 @@
 # IO流(java.io)
 
    * [IO流介绍](#IO流介绍)
+
    * [file类](#file类)
+
+   * [File的三种构造方法](#File的三种构造方法)
+
+   * [File类功能](#File类功能)
+
    * [字节流](#字节流)
+
+   * [字节流抽象基类](#字节流抽象基类)
+
+   * [字节流写数据](#字节流写数据)
+
+   * [字节流写数据](#字节流读数据)
+
+   * [复制文本文件](#复制文本文件)
+
+   * [复制图片](#复制图片)
+
+   * [字节缓冲流](#字节缓冲流)
+
    * [字符流](#字符流)
+
+   * [字符流抽象基类](#字符流抽象基类)
+
+   * [字符流写数据](#字符流写数据)
+
+   * [字符流读数据](#字符流读数据)
+
+   * [便捷](#便捷)
+
+   * [字符缓冲流](#字符缓冲流)
+
    * [特殊操作流](#特殊操作流)
+
+   * [标准输入流](#标准输入流)
+
+   * [标准输出流](#标准输出流)
+
+   * [序列化](#对象序列化、反序列化流)
+
+   * [Properties](#Properties)
+
    * [IO流小结](#IO流小结)
+
+     
+
+     
 
 ## IO流介绍
 
@@ -192,7 +235,7 @@ public static void main(String[] args) throws IOException {
 
 #### 字节流写数据三种方式
 
-<img src="F:/javaLearn/IO/IO/pic/1.png">
+<img src="./pic/1.png">
 
 ```java
 public static void main(String[] args) throws IOException {
@@ -381,11 +424,11 @@ public static void main(String[] args) throws IOException {
 
 ### 字符流写数据5种方式
 
-<img src="F://javaLearn//IO//IO/pic/2.png">
+<img src="./pic/2.png">
 
 ### 字符流读数据2种方式
 
-<img src="F:\javaLearn\IO\IO\pic\3.png">
+<img src=".\pic\3.png">
 
 ### 便捷
 
@@ -491,7 +534,9 @@ public class Demo2 {
     }
 ```
 
-### Properties(java.util)
+### Properties
+
+(java.util)
 
 · 是一个Map体系的集合类
 
@@ -516,7 +561,7 @@ public class Demo {
 
 #### 特有方法
 
-<img src="F:\\javaLearn\\IO\\IO\\pic\\4.png">
+<img src="./pic/4.png">
 
 #### 和IO流结合方法
 
@@ -551,7 +596,7 @@ public class Demo2 {
 
 ## IO流小结
 
-<img src="F:\\javaLearn\\IO\\IO\\pic\\IO.png">
+<img src=".\pic\IO.png">
 
-<img src="F:\\javaLearn\\IO\\IO\\pic\\IO2.png">
+<img src=".\\pic\\IO2.png">
 
